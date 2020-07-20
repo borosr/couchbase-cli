@@ -11,7 +11,20 @@ all prerequisites required to run these tools. If you run these tools
 standalone, you will need:
 
 * Python 3.3 or greater
+* pip
 * Command shell such as bash
+
+== Usage
+Run the following command
+[source,shell]
+----
+pip3 install --user urllib3 pylint requests mypy==0.730 coverage==5.2 pytest==5.4.3
+----
+Then
+[source,shell]
+----
+./couchbase-cli --help
+----
 
 == Building the Documentation
 
@@ -46,5 +59,19 @@ To run the unit tests use the following command from the `couchbase-cli` directo
  $ brew install asciidoctor
 
 ---
+
+== Docker
+=== Custom build
+[source,shell]
+----
+docker build -t cb-cli:my-tag . \
+docker run -it cb-cli:my-tag
+----
+=== From DockerHub
+[source,shell]
+----
+docker pull borosr/cb-cli \
+docker run -it cb-cli
+----
 
 Copyright (C) 2018 Couchbase, Inc.
